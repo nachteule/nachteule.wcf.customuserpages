@@ -14,6 +14,9 @@ class UserCustomPagesListener implements EventListener {
 	 * @see EventListener::execute()
 	 */
 	public function execute($eventObj, $className, $eventName) {
+		if (!$eventObj->getUser()->getPermission('user.customUserPages.canUse'))
+			return;
+		
 		$pages = UserCustomPage::getPagesByUserID($eventObj->getUser()->userID);
 		
 		foreach ($pages as $name => $menuItem) {
