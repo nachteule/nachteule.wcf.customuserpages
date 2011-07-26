@@ -1,7 +1,7 @@
 <?php
 require_once(WCF_DIR.'lib/page/AbstractPage.class.php');
 require_once(WCF_DIR.'lib/data/user/UserProfileFrame.class.php');
-require_once(WCF_DIR.'lib/data/user/customPage/UserCustomPage.class.php');
+require_once(WCF_DIR.'lib/data/user/customPage/ViewableUserCustomPage.class.php');
 
 /**
  * @author	Nachteule`
@@ -37,7 +37,7 @@ class UserCustomPagePage extends AbstractPage {
 	public function readData() {
 		parent::readData();
 		
-		$this->page = new UserCustomPage(null, null, $this->frame->getUser()->userID, $this->pageName);
+		$this->page = new ViewableUserCustomPage(null, null, $this->frame->getUser()->userID, $this->pageName);
 		
 		if (!$this->page->pageID)
 			throw new IllegalLinkException();
