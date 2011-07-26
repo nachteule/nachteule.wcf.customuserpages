@@ -24,4 +24,21 @@ class UserCustomPage extends DatabaseObject {
 		
 		return parent::__construct($row);
 	}
+	
+	/**
+	 * Gets pageName and menuItem of all pages of a user, sorted by showOrder.
+	 */
+	 public static function getPagesByUserID($userID) {
+	 	$sql = "SELECT pageName, menuItem
+	 			FROM wcf".WCF_N."_user_custom_page
+	 			WHERE userID = ".$userID."
+	 			ORDER BY showOrder ASC";
+	 	$result = WCF::getDB()->sendQuery($sql);
+	 	
+	 	$pages = array();
+	 	while ($row = WCF::getDB()->fetchArray($result))
+	 		$pages[$row['pageName']] = $row['menuItem'];
+	 	
+	 	return $pages;
+	 }
 }
