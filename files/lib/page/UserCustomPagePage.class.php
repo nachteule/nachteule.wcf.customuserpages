@@ -29,13 +29,6 @@ class UserCustomPagePage extends AbstractPage {
 		
 		if (!empty($_GET['pageName']))
 			$this->pageName = StringUtil::trim($_GET['pageName']);
-	}
-	
-	/**
-	 * @see Page::readData()
-	 */
-	public function readData() {
-		parent::readData();
 		
 		$this->page = new ViewableUserCustomPage(null, null, $this->frame->getUser()->userID, $this->pageName);
 		
@@ -53,7 +46,7 @@ class UserCustomPagePage extends AbstractPage {
 		
 		WCF::getTPL()->assign(array(
 			'page' => $this->page
-		))
+		));
 	}
 	
 	/**

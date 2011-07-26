@@ -20,10 +20,10 @@ class UserCustomPagesListener implements EventListener {
 		$pages = UserCustomPage::getPagesByUserID($eventObj->getUser()->userID);
 		
 		foreach ($pages as $name => $menuItem) {
-			UserProfileMenu::getInstance()->menuItems[] = array(
+			UserProfileMenu::getInstance()->menuItems[''][] = array(
 				'menuItem' => $menuItem,
-				'menuItemLink' => 'index.php?page=UserCustomPage&amp;userID='.$eventObj->getUser()->userID.'&amp;pageName='.$name.SID_ARG_2ND,
-				'menuItemIcon' => 'messageM.png'
+				'menuItemLink' => 'index.php?page=UserCustomPage&userID='.$eventObj->getUser()->userID.'&pageName='.$name.SID_ARG_2ND_NOT_ENCODED,
+				'menuItemIcon' => StyleManager::getStyle()->getIconPath('messageM.png')
 			);
 		}
 	}

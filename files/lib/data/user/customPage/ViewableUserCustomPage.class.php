@@ -6,7 +6,7 @@ require_once(WCF_DIR.'lib/data/user/customPage/UserCustomPage.class.php');
  * @license	GNU Lesser General Public License
  * @package nachteule.wcf.customuserpages
  */
-class ViewableUserCustomPage extends DatabaseObject {
+class ViewableUserCustomPage extends UserCustomPage {
 	/**
 	 * Returns the formatted content.
 	 *
@@ -17,6 +17,6 @@ class ViewableUserCustomPage extends DatabaseObject {
 		
 		MessageParser::getInstance()->setOutputType('text/html');
 		
-		return MessageParser::getInstance()->parse($this->message, true, false, true, false);
+		return MessageParser::getInstance()->parse($this->content, true, false, true, false);
 	}
 }
