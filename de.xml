@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<language xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/language.xsd" languagecode="de">
+	<category name="wcf.acp.group">
+		<item name="wcf.acp.group.option.category.user.profile.customPages"><![CDATA[Profilseiten]]></item>
+		<item name="wcf.acp.group.option.category.user.profile.customPages.description"><![CDATA[]]></item>
+		<item name="wcf.acp.group.option.user.customUserPages.canUse"><![CDATA[Kann Profilseiten anlegen und bearbeiten]]></item>
+		<item name="wcf.acp.group.option.user.customUserPages.canUse.description"><![CDATA[]]></item>
+		<item name="wcf.acp.group.option.user.customUserPages.canViewPages"><![CDATA[Kann Profilseiten ansehen]]></item>
+		<item name="wcf.acp.group.option.user.customUserPages.canViewPages.description"><![CDATA[]]></item>
+	</category>
+</language>

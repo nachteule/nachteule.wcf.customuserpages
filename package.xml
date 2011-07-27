@@ -19,5 +19,6 @@
 		<templates>templates.tar</templates>
 		<groupoptions>groupoptions.xml</groupoptions>
 		<eventlistener>eventlistener.xml</eventlistener>
+		<languages languagecode="de">de.xml</languages>
 	</instructions>
 </package>
