@@ -35,11 +35,11 @@ class UserCustomPage extends DatabaseObject {
 	 			ORDER BY showOrder ASC";
 	 	$result = WCF::getDB()->sendQuery($sql);
 	 	
-	 	$pages = array();
+	 	$items = array();
 	 	while ($row = WCF::getDB()->fetchArray($result))
-	 		$pages[$row['pageName']] = $row['menuItem'];
+	 		$items[$row['pageName']] = $row['menuItem'];
 	 	
-	 	return $pages;
+	 	return $items;
 	 }
 	
 	/**
