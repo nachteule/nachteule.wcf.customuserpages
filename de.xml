@@ -8,4 +8,8 @@
 		<item name="wcf.acp.group.option.user.customUserPages.canViewPages"><![CDATA[Kann Profilseiten ansehen]]></item>
 		<item name="wcf.acp.group.option.user.customUserPages.canViewPages.description"><![CDATA[]]></item>
 	</category>
+	
+	<category name="wcf.user.usercp">
+		<item name="wcf.user.usercp.menu.link.profile.customPagesOverview"><![CDATA[Profilseiten]]></item>
+	</category>
 </language>

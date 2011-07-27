@@ -19,6 +19,7 @@
 		<templates>templates.tar</templates>
 		<groupoptions>groupoptions.xml</groupoptions>
 		<eventlistener>eventlistener.xml</eventlistener>
+		<usercpmenu>usercpmenu.xml</usercpmenu>
 		<languages languagecode="de">de.xml</languages>
 	</instructions>
 </package>

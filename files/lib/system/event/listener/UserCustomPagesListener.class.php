@@ -17,9 +17,9 @@ class UserCustomPagesListener implements EventListener {
 		if (!$eventObj->getUser()->getPermission('user.customUserPages.canUse'))
 			return;
 		
-		$pages = UserCustomPage::getPagesByUserID($eventObj->getUser()->userID);
+		$items = UserCustomPage::getMenuItemsByUserID($eventObj->getUser()->userID);
 		
-		foreach ($pages as $name => $menuItem) {
+		foreach ($items as $name => $menuItem) {
 			UserProfileMenu::getInstance()->menuItems[''][] = array(
 				'menuItem' => $menuItem,
 				'menuItemLink' => 'index.php?page=UserCustomPage&userID='.$eventObj->getUser()->userID.'&pageName='.$name.SID_ARG_2ND_NOT_ENCODED,
