@@ -14,16 +14,15 @@ class UserCustomPagesListener implements EventListener {
 	 * @see EventListener::execute()
 	 */
 	public function execute($eventObj, $className, $eventName) {
-		if (!$eventObj->getUser()->getPermission('user.customUserPages.canUse'))
-			return;
+		$pages = UserCustomPage::getMenuItemsByUserID($eventObj->userID);
 		
-		$items = UserCustomPage::getMenuItemsByUserID($eventObj->getUser()->userID);
-		
-		foreach ($items as $name => $menuItem) {
+		foreach ($pages as $name => $menuItem) {
 			UserProfileMenu::getInstance()->menuItems[''][] = array(
 				'menuItem' => $menuItem,
-				'menuItemLink' => 'index.php?page=UserCustomPage&userID='.$eventObj->getUser()->userID.'&pageName='.$name.SID_ARG_2ND_NOT_ENCODED,
-				'menuItemIcon' => StyleManager::getStyle()->getIconPath('messageM.png')
+				'parentMenuItem' => '',
+				'menuItemLink' => 'index.php?page=UserCustomPage&userID='.$eventObj->userID.'&pageName='.$name.SID_ARG_2ND_NOT_ENCODED,
+				'menuItemIcon' => 'messageM.png',
+				'permissions' => 'user.customUserPages.canViewPages'
 			);
 		}
 	}
