@@ -6,5 +6,10 @@
 			<eventname>loadedCache</eventname>
 			<listenerclassfile>lib/system/event/listener/UserCustomPagesListener.class.php</listenerclassfile>
 		</eventlistener>
+		<eventlistener>
+			<eventclassname>UserProfileFrame</eventclassname>
+			<eventname>assignVariables</eventname>
+			<listenerclassfile>lib/system/event/listener/UserCustomPagesListener.class.php</listenerclassfile>
+		</eventlistener>
 	</import>
 </data>

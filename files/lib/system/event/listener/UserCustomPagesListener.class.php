@@ -14,16 +14,32 @@ class UserCustomPagesListener implements EventListener {
 	 * @see EventListener::execute()
 	 */
 	public function execute($eventObj, $className, $eventName) {
-		$items = UserCustomPage::getMenuItemsByUserID($eventObj->userID);
+		if (!WCF::getUser()->getPermission('user.ucstomUserPages.canViewPages'))
+			return;
 		
-		foreach ($items as $name => $menuItem) {
-			UserProfileMenu::getInstance()->menuItems[''][] = array(
-				'menuItem' => $menuItem,
-				'parentMenuItem' => '',
-				'menuItemLink' => 'index.php?page=UserCustomPage&userID='.$eventObj->userID.'&pageName='.$name.SID_ARG_2ND_NOT_ENCODED,
-				'menuItemIcon' => 'messageM.png',
-				'permissions' => 'user.customUserPages.canViewPages'
-			);
+		switch ($className) {
+			case 'UserProfileMenu':
+				$items = UserCustomPage::getMenuItemsByUserID($eventObj->userID);
+		
+				foreach ($items as $name => $menuItem) {
+					UserProfileMenu::getInstance()->menuItems[''][] = array(
+						'menuItem' => $menuItem,
+						'parentMenuItem' => '',
+						'menuItemLink' => 'index.php?page=UserCustomPage&userID='.$eventObj->userID.'&pageName='.$name.SID_ARG_2ND_NOT_ENCODED,
+						'menuItemIcon' => 'messageM.png',
+						'permissions' => 'user.customUserPages.canViewPages'
+					);
+				}
+				
+				break;
+			
+			case 'UserProfileFrame':
+				if ($eventObj->getUser()->getPermission('user.customUserPages.canUse'))
+					WCF::getTPL()->append('additionalUserCardOptions',
+						WCF::getTPL()->display('customUserPagesUserCardOption')
+					);
+				
+				break;
 		}
 	}
 }
