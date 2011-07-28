@@ -14,9 +14,9 @@ class UserCustomPagesListener implements EventListener {
 	 * @see EventListener::execute()
 	 */
 	public function execute($eventObj, $className, $eventName) {
-		$pages = UserCustomPage::getMenuItemsByUserID($eventObj->userID);
+		$items = UserCustomPage::getMenuItemsByUserID($eventObj->userID);
 		
-		foreach ($pages as $name => $menuItem) {
+		foreach ($items as $name => $menuItem) {
 			UserProfileMenu::getInstance()->menuItems[''][] = array(
 				'menuItem' => $menuItem,
 				'parentMenuItem' => '',
