@@ -34,7 +34,7 @@ class UserCustomPagesListener implements EventListener {
 				break;
 			
 			case 'UserProfileFrame':
-				if ($eventObj->getUser()->getPermission('user.customUserPages.canUse'))
+				if (WCF::getUser()->userID == $eventObj->userID && $eventObj->getUser()->getPermission('user.customUserPages.canUse'))
 					WCF::getTPL()->append('additionalUserCardOptions',
 						WCF::getTPL()->display('customUserPagesUserCardOption')
 					);

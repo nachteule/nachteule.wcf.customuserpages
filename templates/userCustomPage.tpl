@@ -23,7 +23,25 @@
 			
 			<div class="buttonBar">
 				<div class="smallButtons">
-					<ul><li class="extraButton"><a href="#top" title="{lang}wcf.global.scrollUp{/lang}"><img src="{icon}upS.png{/icon}" alt="{lang}wcf.global.scrollUp{/lang}" /> <span class="hidden">{lang}wcf.global.scrollUp{/lang}</span></a></li></ul>
+					<ul>
+						<li class="extraButton"><a href="#top" title="{lang}wcf.global.scrollUp{/lang}"><img src="{icon}upS.png{/icon}" alt="{lang}wcf.global.scrollUp{/lang}" /> <span class="hidden">{lang}wcf.global.scrollUp{/lang}</span></a></li>
+						
+						{if $this->userID == $user->userID && $this->user->getPermission('user.customPages.canUse')}
+							<li>
+								<a href="index.php?action=UserCustomPageDelete&amp;pageID={@$page->pageID}{@SID_ARG_2ND}" onclick="return confirm('{lang}wcf.user.customPages.delete.sure{/lang}')">
+									<img src="{icon}deleteS.png{/icon}" alt="{lang}wcf.user.customPages.delete{/lang}" />
+									<span>{lang}wcf.user.customPages.delete{/lang}</span>
+								</a>
+							</li>
+							
+							<li>
+								<a href="index.php?form=UserCustomPageEdit&amp;pageID={@$page->pageID}{@SID_ARG_2ND}">
+									<img src="{icon}editS.png{/icon}" alt="{lang}wcf.user.customPages.edit{/lang}" />
+									<span>{lang}wcf.user.customPages.edit{/lang}</span>
+								</a>
+							</li>
+						{/if}
+					</ul>
 				</div>
 			</div>
 		</div>
