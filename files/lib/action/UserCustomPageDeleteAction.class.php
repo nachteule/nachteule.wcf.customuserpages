@@ -26,7 +26,7 @@ class UserCustomPageDeleteAction extends AbstractSecureAction {
 			throw new IllegalLinkException();
 		
 		if (!($this->page->userID != WCF::getUser->userID
-			&& WCF::getUser()->getPermission('user.customPages.canUse'))
+			&& WCF::getUser()->getPermission('user.customUserPages.canUse'))
 			&& !WCF::getUser()->getPermission('mod.customUserPages.canDelete'))
 			throw new PermissionDeniedException();
 	}

@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <language xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/language.xsd" languagecode="de">
 	<category name="wcf.acp.group">
-		<item name="wcf.acp.group.option.category.user.profile.customPages"><![CDATA[Profilseiten]]></item>
-		<item name="wcf.acp.group.option.category.user.profile.customPages.description"><![CDATA[]]></item>
+		<item name="wcf.acp.group.option.category.user.profile.customUserPages"><![CDATA[Profilseiten]]></item>
+		<item name="wcf.acp.group.option.category.user.profile.customUserPages.description"><![CDATA[]]></item>
 		<item name="wcf.acp.group.option.category.mod.customUserPages"><![CDATA[Profilseiten]]></item>
 		<item name="wcf.acp.group.option.category.mod.customUserPages.description"><![CDATA[]]></item>
-		<item name="wcf.acp.group.option.user.customPages.canUse"><![CDATA[Kann Profilseiten anlegen und bearbeiten]]></item>
-		<item name="wcf.acp.group.option.user.customPages.canUse.description"><![CDATA[]]></item>
-		<item name="wcf.acp.group.option.user.customPages.canViewPages"><![CDATA[Kann Profilseiten ansehen]]></item>
-		<item name="wcf.acp.group.option.user.customPages.canViewPages.description"><![CDATA[]]></item>
+		<item name="wcf.acp.group.option.user.customUserPages.canUse"><![CDATA[Kann Profilseiten anlegen und bearbeiten]]></item>
+		<item name="wcf.acp.group.option.user.customUserPages.canUse.description"><![CDATA[]]></item>
+		<item name="wcf.acp.group.option.user.customUserPages.canViewPages"><![CDATA[Kann Profilseiten ansehen]]></item>
+		<item name="wcf.acp.group.option.user.customUserPages.canViewPages.description"><![CDATA[]]></item>
 		<item name="wcf.acp.group.option.mod.customUserPages.canEdit"><![CDATA[Kann alle Profilseiten bearbeiten]]></item>
 		<item name="wcf.acp.group.option.mod.customUserPages.canEdit.description"><![CDATA[]]></item>
 		<item name="wcf.acp.group.option.mod.customUserPages.canDelete"><![CDATA[Kann alle Profilseiten löschen]]></item>
 		<item name="wcf.acp.group.option.mod.customUserPages.canDelete.description"><![CDATA[]]></item>
 	</category>
 	
-	<category name="wcf.user.customPages">
-		<item name="wcf.user.customPages.add"><![CDATA[Profilseite anlegen]]></item>
-		<item name="wcf.user.customPages.edit"><![CDATA[Profilseite bearbeiten]]></item>
-		<item name="wcf.user.customPages.delete"><![CDATA[Profilseite löschen]]></item>
-		<item name="wcf.user.customPages.delete.sure"><![CDATA[Möchten Sie diese Profilseite wirklich löschen?]]></item>
+	<category name="wcf.user.customUserPages">
+		<item name="wcf.user.customUserPages.add"><![CDATA[Profilseite anlegen]]></item>
+		<item name="wcf.user.customUserPages.edit"><![CDATA[Profilseite bearbeiten]]></item>
+		<item name="wcf.user.customUserPages.delete"><![CDATA[Profilseite löschen]]></item>
+		<item name="wcf.user.customUserPages.delete.sure"><![CDATA[Möchten Sie diese Profilseite wirklich löschen?]]></item>
 	</category>
 </language>
