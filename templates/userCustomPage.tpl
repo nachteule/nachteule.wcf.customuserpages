@@ -26,16 +26,18 @@
 					<ul>
 						<li class="extraButton"><a href="#top" title="{lang}wcf.global.scrollUp{/lang}"><img src="{icon}upS.png{/icon}" alt="{lang}wcf.global.scrollUp{/lang}" /> <span class="hidden">{lang}wcf.global.scrollUp{/lang}</span></a></li>
 						
-						{if $this->userID == $user->userID && $this->user->getPermission('user.customPages.canUse')}
+						{if ($this->userID == $user->userID && $this->user->getPermission('user.customPages.canUse')) || $this->user->getPermission('mod.customPages.canEdit')}
 							<li>
 								<a href="index.php?action=UserCustomPageDelete&amp;pageID={@$page->pageID}{@SID_ARG_2ND}" onclick="return confirm('{lang}wcf.user.customPages.delete.sure{/lang}')">
 									<img src="{icon}deleteS.png{/icon}" alt="{lang}wcf.user.customPages.delete{/lang}" />
 									<span>{lang}wcf.user.customPages.delete{/lang}</span>
 								</a>
 							</li>
-							
+						{/if}
+						
+						{if ($this->userID == $user->userID && $this->user->getPermission('user.customPages.canUse')) || $this->user->getPermission('mod.customPages.canDelete')}
 							<li>
-								<a href="index.php?form=UserCustomPageEdit&amp;pageID={@$page->pageID}{@SID_ARG_2ND}">
+								<a href="index.php?form=UserCustomPageEdit&amp;pageID={@$page->pageID}&amp;t={@SECURITY_TOKEN}{@SID_ARG_2ND}">
 									<img src="{icon}editS.png{/icon}" alt="{lang}wcf.user.customPages.edit{/lang}" />
 									<span>{lang}wcf.user.customPages.edit{/lang}</span>
 								</a>

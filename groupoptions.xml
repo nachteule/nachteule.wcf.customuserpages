@@ -5,18 +5,32 @@
 			<category name="user.profile.customPages">
 				<parent>user.profile</parent>
 			</category>
+			
+			<category name="mod.customUserPages">
+				<parent>mod</parent>
+			</category>
 		</categories>
 		
 		<options>
-			<option name="user.customUserPages.canUse">
+			<option name="user.customPages.canUse">
 				<categoryname>user.profile.customPages</categoryname>
 				<optiontype>boolean</optiontype>
 				<defaultvalue>0</defaultvalue>
 			</option>
-			<option name="user.customUserPages.canViewPages">
+			<option name="user.customPages.canViewPages">
 				<categoryname>user.profile.customPages</categoryname>
 				<optiontype>boolean</optiontype>
 				<defaultvalue>1</defaultvalue>
+			</option>
+			<option name="mod.customUserPages.canEdit">
+				<categoryname>mod.customUserPages</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+			</option>
+			<option name="mod.customUserPages.canDelete">
+				<categoryname>mod.customUserPages</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
 			</option>
 		</options>
 	</import>
